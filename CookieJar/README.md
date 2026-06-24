@@ -1,10 +1,10 @@
 # 🍪 Cookie Jar
 
-## Screenshot
+## Preview
 
 ![Cookie Jar screenshot](screenshot.png)
 
-A simple note-tracking web app that uses browser cookies to save your notes — even after refreshing the page.
+A simple note-tracking web app that uses browser cookies to save your notes, even after refreshing the page.
 
 ## Features
 
@@ -31,4 +31,4 @@ A simple note-tracking web app that uses browser cookies to save your notes — 
 
 ## Notes
 
-Design was left open-ended by the assignment — built a "cookie jar" theme with a warm color palette.
+Design was left open-ended by the assignment. I built a "cookie jar" theme with a warm color palette.
