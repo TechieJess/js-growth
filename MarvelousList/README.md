@@ -1,6 +1,6 @@
 # 🎬 Marvelous List
 
-A Marvel film browser built with vanilla HTML, CSS, and JavaScript. Click on a film title to see its details — poster, release date, cast, and description.
+A Marvel film browser built with vanilla HTML, CSS, and JavaScript. Click on a film title to see its details/poster, release date, cast, and description.
 
 ## Features
 
