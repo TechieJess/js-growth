@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Age Calculator</title>
+</head>
+<body>
+    <div class="card">
+        <form action="">
+            <div class="age-input">
+                <div class="field">
+                    <label for="day">DAY</label>
+                    <input type="text" name="age-calculator" id="day" placeholder="DD" minlength="1" maxlength="2">
+                    <p class="day-error"></p>
+                </div>
+                
+                <div class="field">
+                    <label for="month">MONTH</label>
+                    <input type="text" name="age-calculator" id="month" placeholder="MM" minlength="2" maxlength="2">
+                    <p class="month-error"></p>
+                </div>
+
+                <div class="field">
+                    <label for="year">YEAR</label>
+                    <input type="text" name="age-calculator" id="year" placeholder="YYYY" minlength="4" maxlength="4">
+                    <p class="year-error"></p>
+                </div>
+            </div>
+            <div class="hr-button">
+                <hr>
+                <button type="submit" aria-label="Submit" id="submit"></button>
+            </div>
+
+        <output name="result" for="day month year">
+            <div class="result">
+                <p><span class="year-result">--</span> years</p>
+                <p><span class="month-result">--</span> months</p>
+                <p><span class="day-result">--</span> days</p>
+            </div>
+        </output>
+    </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

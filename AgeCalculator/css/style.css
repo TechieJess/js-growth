@@ -1,0 +1,163 @@
+:root {
+    --off-white : #f0f0f0;
+    --light-grey: #dbdbdb;
+    --smokey-grey: #717070;
+    --off-black: #141414;
+    --purple: #7a4dff;
+    --light-red: #ff5757;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--light-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px 20px 100px 20px;
+    width: 30%;
+}
+
+.age-input{
+    display: flex;
+    gap: 15px;
+}
+ 
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: var(--smokey-grey);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.result p {
+    font-size: 50px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 1.1;
+    margin: 0px;
+}
+
+input {
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid var(--light-grey);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 7px;
+    width: 65px;
+    height: 20px;
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--purple);
+}
+
+button {
+    background-color: var(--purple);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 2px;
+    height: 25px;
+    background-color: #ffffff;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+button:hover {
+    background-color: black;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--light-grey);
+}
+
+.hr-button {
+    position: relative;
+    margin: 15px 0 35px;
+}
+
+.year-result,
+.month-result,
+.day-result {
+    color: var(--purple);
+}
+
+.year-error,
+.month-error,
+.day-error {
+    color: var(--light-red);
+    font-size: 8px;
+    font-style: italic;
+}
+
+label.input-error {
+    color: var(--light-red);
+}
+
+.input-error {
+    border-color: var(--light-red);
+}
+
+/* Mobile Design */
+
+@media (max-width: 600px) {
+    .card {
+        width: 85%;
+    }
+    input {
+        width: 70px;
+    }
+
+    button {
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+    }
+
+    .hr-button {
+        margin: 40px 0px;
+    }
+
+    label {
+    font-size: 12px;
+    }
+}
