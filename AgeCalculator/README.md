@@ -1,6 +1,7 @@
-# Frontend Mentor - Age Calculator App
+# Age Calculator App
 
-A responsive age calculator built with vanilla HTML, CSS, and JavaScript. Enter a date of birth and get back the exact age in years, months, and days — with full form validation and an animated count-up reveal.
+A responsive age calculator built with vanilla HTML, CSS, and JavaScript. 
+Enter a date of birth and get back the exact age in years, months, and days with full form validation and an animated count-up reveal.
 
 ![Age Calculator screenshot](screenshot.png)
 
