@@ -1,3 +1,4 @@
+// Grabbing page elements...
 const range = document.querySelector('#length');
 const characterLength = document.querySelector('.character-length');
 const strengthText = document.querySelector('.strength-text')
@@ -8,21 +9,27 @@ const symbols = document.querySelector('#symbols');
 const generate = document.querySelector('#generate');
 const generatedPassword = document.querySelector('#password');
 const copy = document.querySelector('#copy');
-const copyText = document.querySelector('#copy-text');
-const originalCopyIcon = copy.innerHTML;
 const bars = document.querySelectorAll('.bar')
 
-let hasGenerated = false;
-let copyTimer
+// This changes the copy icon back after the tick disappears
+const originalCopyIcon = copy.innerHTML;
 
+// This turns true once a real password exists, so Copy ignores the starter text
+let hasGenerated = false;
+// Holds the timer so a second copy click can cancel the first one
+let copyTimer 
+
+// This shows the chosen length
 range.addEventListener('input', slider);
 function slider(e) {
     characterLength.textContent = range.value;
 }
 
+//Generate button
 generate.addEventListener('click', generated);
 
 function generated(e) {
+// Build the pool of allowed characters from the ticked boxes, and count how many types are ticked (used for strength later)
 let pool = "";
 let tally = 0;
 
@@ -43,13 +50,16 @@ if (symbols.checked) {
     tally = tally + 1;
 }
 
+// Stop if there is nothing to build a password from
 if (pool.length === 0) {
     return;
 }
+// Stop if the slider is at 0 
 if (range.value === "0") {
     return;
 }
 
+// Pick one random character from the pool, once per unit of length
 let password = "";
 
 for (let i = 0; i < range.value; i++) {
@@ -58,10 +68,14 @@ for (let i = 0; i < range.value; i++) {
     password = password + character;
 }
 
+// Show the password and mark that a real one exists
 generatedPassword.textContent = password;
 generatedPassword.classList.add('generated');
 hasGenerated = true;
 
+
+// STRENGTH RATING
+// 1. Length gives a level from 1 to 4
 let rangeLength = Number(range.value);
 let lengthLevel;
 
@@ -75,8 +89,10 @@ if (rangeLength <= 5) {
     lengthLevel = 4;
 }
 
+// 2. A password is only as strong as its weaker side, so take the lower of the length level and the variety count
 const finalLevel = Math.min(tally, lengthLevel);
 
+// 3. Turn the final level into a word
 if (finalLevel === 1) {
     strengthText.textContent = "WEAK";
 } else if (finalLevel === 2) {
@@ -87,6 +103,7 @@ if (finalLevel === 1) {
     strengthText.textContent = "STRONG";
 }
 
+// Lights up the bars
 for (let i = 0; i < bars.length; i++) {
     if (i < finalLevel) {
         bars[i].classList.add('filled');
@@ -96,6 +113,7 @@ for (let i = 0; i < bars.length; i++) {
 }
 }
 
+// COPY BUTTON
 copy.addEventListener('click', copied);
 
 function copied(e) {
@@ -107,5 +125,5 @@ function copied(e) {
     clearTimeout(copyTimer);
     copyTimer = setTimeout(() => {
         copy.innerHTML = originalCopyIcon;
-    }, 5000);
+    }, 2000);
 }
