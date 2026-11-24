@@ -1,4 +1,4 @@
-# Frontend Mentor - Password Generator App
+# Password Generator App
 
 A password generator built with vanilla HTML, CSS, and JavaScript. Pick a length, choose which character types to include, and generate a random password with a strength rating.
 
